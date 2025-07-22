@@ -28,12 +28,20 @@ font-size: 22px;
 }
 
 .grid{
-    display: grid;
+    display: flex;
     gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+   
 }
 
 .grid div{
-    padding: 20px;
-    border-radius: 40px;
+    padding: 15px;
+    border-radius: 100px;
     background-color: rgb(43, 86, 123);
+    width: 100px;
+}
+
+@media (max-width: 768px){
+    body{background-color: rgb(223, 198, 222);}
 }
