@@ -21,6 +21,8 @@
         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
         <a class="nav-link" href="#about">About Me</a>
         <a class="nav-link" href="#skills">skills</a>
+        <a class="nav-link" href="testimonials.html">Testimonials</a>
+
       </div>
     </div>
   </div>
@@ -28,14 +30,15 @@
 
 </body>
    <section id="home" class="hero">
-    <img src="2DED9CBD-FBE0-45F5-BDA6-42287CEA493C.jpeg" alt="My Profile Picture" width="35%"/>
+    <img src="7B66B4EE-0C6A-43B3-B204-27A0592021D0.jpeg" alt="My Profile Picture" width="35%"/>
     <h2>Hi, I am <span class="accent">Dariana  Arias</span></h2>
     <p>I'm a high school student learning web development!</p>
    </section>
 
    <section id="about" class="section">
     <h2>About Me</h2>
-    <p>5-6 sentence about me </p>
+    <p> My name is dariana but nana for short. I like blue it reminds me off the water so nice. I love playing softball. I always am busying working or playing softball. I am eager to trying and learning new things to help me in life and imprpve my skills in different ways.
+   </p>
    </section>
 
    <secton id="skills" class="section">
@@ -46,7 +49,7 @@
     <div>JavaScript</div>   
    </div>
    </secton>
-
+<h2> I am <span id="typing"></span></h2>
 
    <section id="projects" class="section">
     <h2> My projects</h2>
@@ -58,9 +61,142 @@
         <a href="mailto:darianaarias15@gmail.com">darianaarias15@gmail.com</a>
     </p>
 </section>
+<script>
+  
+  Bootstrap 5.3 color-mode helper */
+  const html = document.documentElement;
+  const toggleBtn = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-<script src="script.js"><</script>
+
+  // Read saved preference or OS default
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = stored ? stored : (prefersDark ? 'dark' : 'light');
+  html.setAttribute('data-bs-theme', currentTheme);
+  updateIcon(currentTheme);
+
+
+  // Click handler
+  toggleBtn.addEventListener('click', () => {
+    const newTheme = html.getAttribute('data-bs-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-bs-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcon(newTheme);
+  });
+
+
+  function updateIcon(theme) {
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  }
+</script>
+<script>
+const words = [" kind "];
+let i = 0; // word index
+let j = 0; // letter index
+let currentWord = "";
+let isDeleting = false;
+const speed = 150; // typing speed (ms per letter)
+const eraseSpeed = 80; // deleting speed
+const delayBetweenWords = 1200; // pause after a word completes
+
+function type() {
+currentWord = words[i];
+
+if (!isDeleting && j <= currentWord.length) {
+document.getElementById("typing").textContent = currentWord.slice(0, j++);
+setTimeout(type, speed);
+}
+else if (isDeleting && j >= 0) {
+document.getElementById("typing").textContent = currentWord.slice(0, j--);
+setTimeout(type, eraseSpeed);
+}
+else if (j < 0) {
+isDeleting = false;
+i = (i + 1) % words.length;
+setTimeout(type, speed);
+}
+else if (j > currentWord.length) {
+isDeleting = true;
+setTimeout(type, delayBetweenWords);
+}
+}
+
+type();
+</script>
+<!-- END: Typing Effect -->
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+ <script src="script.js"></script>
 </body>
 
-</html>
+
+<!-- START: Guess the Number -->
+<h2>Guess the Number!</h2>
+<p>A number between 1 and 10.</p>
+<input type="number" id="guess" placeholder="Enter guess">
+<button onclick="checkGuess()">Guess</button>
+<p id="result"></p>
+
+<script>
+const secretNumber = Math.floor(Math.random() * 100) + 1;
+
+function checkGuess() {
+let guess = Number(document.getElementById("guess").value);
+let result = document.getElementById("result");
+
+if (guess === 5) {
+result.textContent = "🎉 Correct! You guessed it!";
+} else if (guess < secretNumber) {
+result.textContent = "Too low! Try again.";
+} else {
+result.textContent = "Too high! Try again.";
+}
+}
+</script>
+<!-- END: Guess the Number -->
+  
+<!-- Load particles.js library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<!-- Particle config -->
+<script>
+particlesJS("particles-js", {
+particles: {
+number: { value: 80, density: { enable: true, value_area: 800 } },
+color: { value: "#ffffff" },
+shape: { type: "circle" },
+opacity: { value: 0.5, random: false },
+size: { value: 3, random: true },
+line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+move: {
+enable: true,
+speed: 4,
+direction: "none",
+random: false,
+straight: false,
+out_mode: "out",
+bounce: false,
+attract: { enable: true, rotateX: 600, rotateY: 1200 }
+}
+},
+interactivity: {
+detect_on: "canvas",
+events: {
+onhover: { enable: true, mode: "repulse" },
+onclick: { enable: true, mode: "push" },
+resize: true
+},
+modes: {
+grab: { distance: 400, line_linked: { opacity: 1 } },
+bubble: { distance: 400, size: 40, duration: 2, opacity: 8 },
+repulse: { distance: 100, duration: 0.4 },
+push: { particles_nb: 4 },
+remove: { particles_nb: 2 }
+}
+},
+retina_detect: true
+});
+</script>
+
+
