@@ -6,11 +6,15 @@ Fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
 
+
+
 /*
 ===============
 Variables
 ===============
 */
+
+
 
 
 :root {
@@ -60,6 +64,8 @@ Variables
 Global Styles
 ===============
 */
+
+
 
 
 *,
@@ -134,11 +140,15 @@ p {
 /*  global classes */
 
 
+
+
 /* section */
 .section {
  padding-top: 2rem; /* reduce top padding */
  padding-bottom: 5rem;
 }
+
+
 
 
 .section-center {
@@ -156,6 +166,8 @@ main {
  display: grid;
  place-items: center;
 }
+
+
 
 
 /*

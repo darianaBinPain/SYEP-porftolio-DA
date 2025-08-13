@@ -1,202 +1,327 @@
-<!DOCTYPE html> <!--This tells the brower what kind of file we re writing-->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="vieqport" content="width=width, initial-scale=1.0">
-    <title> dariana's Portfolio</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nana Arias | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --accent: #ff4a57;
+      --text: #f9f9f9;
+      --muted: #a1a1a1;
+      --card: #151515;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1.5rem;
+      background: linear-gradient(135deg, var(--bg) 0%, #1a1a1a 100%);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    header span {
+      color: var(--accent);
+    }
+
+    header p {
+      margin: 0.5rem 0 2rem;
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .testimonials-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial-card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(255, 74, 87, 0.2);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid var(--accent);
+}
+
+
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      color: var(--text);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+    }
+
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(255, 74, 87, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--muted);
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <strong>Nana</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">nanaA</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        <a class="nav-link" href="#about">About Me</a>
-        <a class="nav-link" href="#skills">skills</a>
-        <a class="nav-link" href="testimonials.html">Testimonials</a>
+  <!-- Hero -->
+  <header>
+    <h1>Hi, I'm <span>Nana Arias</span></h1>
+    <p>High-school student learning web development & content creation</p>
+    <a href="#contact" class="btn">Get in touch</a>
+  </header>
 
-      </div>
+  <!-- About -->
+  <section id="about" class="fade-in">
+    <h2 class="section-title">About me</h2>
+    <p>
+      My full name is Dariana Arias, but you can call me Nana for short.  
+      My favorite color is blue, which reminds me of the ocean. 
+      I enjoy playing softball.
+       I am TikToker, although I prefer Instagram. 
+       I like trying new things and getting cute and going out to places. 
+       I enjoy spending time outside with my friends doing different activites with them.
+
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="fade-in">
+    <h2 class="section-title">My skills</h2>
+    <div class="skills-grid">
+      <div class="card"><i class="bi bi-filetype-html"></i> HTML</div>
+      <div class="card"><i class="bi bi-filetype-css"></i> CSS</div>
+      <div class="card"><i class="bi bi-filetype-js"></i> JavaScript</div>
+      <div class="card"><i class="bi bi-camera-video"></i> Content Creation</div>
+      <div class="card"><i class="bi bi-camera-video"></i> painter</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="fade-in">
+   <!-- Testimonials -->
+<section id="testimonials" class="fade-in">
+  <h2 class="section-title">Testimonials</h2>
+
+  <div class="testimonials-grid">
+    <!-- Leah Guthrie -->
+    <div class="testimonial-card">
+      <img src="https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840206396567031022&th=1989b9f7c4c78cee&view=fimg&fur=ip&permmsgid=msg-f:1840206396567031022&sz=s0-l75-ft&attbid=ANGjdJ_THDhQFhscAg1c9SLH0hEUt-janTLtI32FiSVr7VASCifmweVJJyZPgpggo7uBws9FqSOrAF4Xh9SNMwxlW-udePMlursUAkY2lxpcSjDBFix82f1gvlUkQt0&disp=emb&realattid=ii_1989b9f4637284a4ee41&zw" alt="Leah Guthrie" class="avatar" />
+      <p>
+        Nana is one of the most confident and heartfelt people i know helping people out any chance she gets.
+      </p>
+      <strong>— Leah Guthrie</strong>
+    </div>
+
+    <!-- Abigail Robinson -->
+    <div class="testimonial-card">
+      <img src="https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840209762508268950&th=1989bd077682e596&view=fimg&fur=ip&permmsgid=msg-f:1840209762508268950&sz=s0-l75-ft&attbid=ANGjdJ8Vsn6LTW4VMGuYciH5nIt4nDJ88oCyJDKcm6xashryoaZabMSkPbjCOyfDZ0hpGUv2gDlmdItG2nV69zLQ_Clx17kSe9abuM5GPDjnVzXextfdG5Uy7ZaioC4&disp=emb&realattid=ii_1989bd03d2d33c722f01&zw" alt="Abigail Robinson" class="avatar" />
+      <p>
+        “Nana is one of the most creative people I have met, i was having trouble coming up with rhymes so she put down her work and came to help me with that. But not only is she creative but she also is very sweet when you get to know her.”
+      </p>
+      <strong>— Abigail Robinson</strong>
+    </div>
+
+    <!-- Layla Negron -->
+    <div class="testimonial-card">
+      <img src="https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840205488029602416&th=1989b9243bba9270&view=fimg&fur=ip&permmsgid=msg-f:1840205488029602416&sz=s0-l75-ft&attbid=ANGjdJ8HAKOcxsXPfkF5p3cHCbuj5mO_W5udT79RkZJVAeKJGGuSRc7rE72sBqdWmKYz50ciKfe2epaf2L2cidsXHgjic-8peo1UA1z_CmzAV7UcDMUET-tcqLbP1ak&disp=emb&realattid=ii_1989b920185d003b3f41&zw" alt="Layla Negron" class="avatar" />
+      <p>
+        “Nana is my friend who is always helping me when things go wrong. this is both emotionally or academically she always finds a way to help me.”
+      </p>
+      <strong>— Layla Negron</strong>
     </div>
   </div>
-</nav>
-
-</body>
-   <section id="home" class="hero">
-    <img src="7B66B4EE-0C6A-43B3-B204-27A0592021D0.jpeg" alt="My Profile Picture" width="35%"/>
-    <h2>Hi, I am <span class="accent">Dariana  Arias</span></h2>
-    <p>I'm a high school student learning web development!</p>
-   </section>
-
-   <section id="about" class="section">
-    <h2>About Me</h2>
-    <p> My name is dariana but nana for short. I like blue it reminds me off the water so nice. I love playing softball. I always am busying working or playing softball. I am eager to trying and learning new things to help me in life and imprpve my skills in different ways.
-   </p>
-   </section>
-
-   <secton id="skills" class="section">
-<h2> My Skills</h2>
-<div class="grid">
-    <div>HTML</div>
-    <div>CSS</div>
-    <div>JavaScript</div>   
-   </div>
-   </secton>
-<h2> I am <span id="typing"></span></h2>
-
-   <section id="projects" class="section">
-    <h2> My projects</h2>
-   </section>
-
-<section id="contect" class="section">
-    <h2> contact</h2>
-    <p> feel free to reach out to me via email
-        <a href="mailto:darianaarias15@gmail.com">darianaarias15@gmail.com</a>
-    </p>
 </section>
-<script>
-  
-  Bootstrap 5.3 color-mode helper */
-  const html = document.documentElement;
-  const toggleBtn = document.getElementById('theme-toggle');
-  const icon = document.getElementById('theme-icon');
 
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Project One</h3>
+       <img src="https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840312400549045806&th=198a1a60be78e62e&view=fimg&fur=ip&permmsgid=msg-f:1840312400549045806&sz=s0-l75-ft&attbid=ANGjdJ-Y6NPo0ESZiLe71_2ljf_OES5R2sKt-FNYe-uGk5i_2xezEO5jQE8NrtrwHKSMUzbB-Qfyb-pcIIzZYTbUGQYMftfG53TgT-iLEvCHUEZ4ffaw3FaeZX45XAI&disp=emb&realattid=ii_198a1a5d38c218255d01&zw" width="100%"
+      </div>
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>Coming soon…</p>
+      </div>
+      <div class="card">
+        <h3>Project Three</h3>
+        <p>Coming soon…</p>
+      </div>
+    </div>
+  </section>
 
-  // Read saved preference or OS default
-  const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const currentTheme = stored ? stored : (prefersDark ? 'dark' : 'light');
-  html.setAttribute('data-bs-theme', currentTheme);
-  updateIcon(currentTheme);
+  <!-- Contact -->
+  <section id="contact" class="fade-in">
+    <h2 class="section-title">Contact</h2>
+    <p>
+      Want help or having trouble?  
+      feel free to give me an email at
+      <a href="mailto:favv.nana@gmail.com" style="color:var(--accent);">favv.nana@gmail.com</a>
+    </p>
+  </section>
 
+  <footer>
+    © 2024 Nana Arias
+  </footer>
 
-  // Click handler
-  toggleBtn.addEventListener('click', () => {
-    const newTheme = html.getAttribute('data-bs-theme') === 'light' ? 'dark' : 'light';
-    html.setAttribute('data-bs-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcon(newTheme);
-  });
+  <!-- Scroll reveal -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-
-  function updateIcon(theme) {
-    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-  }
-</script>
-<script>
-const words = [" kind "];
-let i = 0; // word index
-let j = 0; // letter index
-let currentWord = "";
-let isDeleting = false;
-const speed = 150; // typing speed (ms per letter)
-const eraseSpeed = 80; // deleting speed
-const delayBetweenWords = 1200; // pause after a word completes
-
-function type() {
-currentWord = words[i];
-
-if (!isDeleting && j <= currentWord.length) {
-document.getElementById("typing").textContent = currentWord.slice(0, j++);
-setTimeout(type, speed);
-}
-else if (isDeleting && j >= 0) {
-document.getElementById("typing").textContent = currentWord.slice(0, j--);
-setTimeout(type, eraseSpeed);
-}
-else if (j < 0) {
-isDeleting = false;
-i = (i + 1) % words.length;
-setTimeout(type, speed);
-}
-else if (j > currentWord.length) {
-isDeleting = true;
-setTimeout(type, delayBetweenWords);
-}
-}
-
-type();
-</script>
-<!-- END: Typing Effect -->
-
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
- <script src="script.js"></script>
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+  </script>
 </body>
-
-
-<!-- START: Guess the Number -->
-<h2>Guess the Number!</h2>
-<p>A number between 1 and 10.</p>
-<input type="number" id="guess" placeholder="Enter guess">
-<button onclick="checkGuess()">Guess</button>
-<p id="result"></p>
-
-<script>
-const secretNumber = Math.floor(Math.random() * 100) + 1;
-
-function checkGuess() {
-let guess = Number(document.getElementById("guess").value);
-let result = document.getElementById("result");
-
-if (guess === 5) {
-result.textContent = "🎉 Correct! You guessed it!";
-} else if (guess < secretNumber) {
-result.textContent = "Too low! Try again.";
-} else {
-result.textContent = "Too high! Try again.";
-}
-}
-</script>
-<!-- END: Guess the Number -->
-  
-<!-- Load particles.js library -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<!-- Particle config -->
-<script>
-particlesJS("particles-js", {
-particles: {
-number: { value: 80, density: { enable: true, value_area: 800 } },
-color: { value: "#ffffff" },
-shape: { type: "circle" },
-opacity: { value: 0.5, random: false },
-size: { value: 3, random: true },
-line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-move: {
-enable: true,
-speed: 4,
-direction: "none",
-random: false,
-straight: false,
-out_mode: "out",
-bounce: false,
-attract: { enable: true, rotateX: 600, rotateY: 1200 }
-}
-},
-interactivity: {
-detect_on: "canvas",
-events: {
-onhover: { enable: true, mode: "repulse" },
-onclick: { enable: true, mode: "push" },
-resize: true
-},
-modes: {
-grab: { distance: 400, line_linked: { opacity: 1 } },
-bubble: { distance: 400, size: 40, duration: 2, opacity: 8 },
-repulse: { distance: 100, duration: 0.4 },
-push: { particles_nb: 4 },
-remove: { particles_nb: 2 }
-}
-},
-retina_detect: true
-});
-</script>
-
+</html>
 

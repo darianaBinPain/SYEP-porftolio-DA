@@ -1,21 +1,64 @@
-
-
-<!DOCTYPE html> <!--This tells the brower what kind of file we re writing-->
+<!DOCTYPE html> <!--This tells the browser what kind of file we're writing-->
 <html>
+
+
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> dariana's Portfolio</title>
+    <title> Ean's portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="style2.css" rel="stylesheet">
     <style>
+    :root {
+      --bg-light:#ffffff;
+      --bg-dark:#121212;
+      --text-light:#212529;
+      --text-dark:#f8f9fa;
+      --accent:#007bff;
+    }
+    body.dark-mode .review {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+
+
+    }
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color .25s, color .25s;
+    }
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    body.dark-mode .navbar {
+      background-color:#1e1e1e !important;
+    }
+    body.dark-mode .form-check-label i.fa-moon::before {
+      content:"\f185";
+    }
+    .form-check-input:checked {
+      background-color: var(--accent);
+      border-color: var(--accent);
+    }
+
+
+</style>
+
+
 </head>
+
+
+
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">nanaA</a>
+    <a class="navbar-brand" href="#">
+      EanW
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,51 +68,128 @@
         <a class="nav-link" href="index.html#about">About Me</a>
         <a class="nav-link" href="index.html#skills">skills</a>
         <a class="nav-link" href="testimonials.html">Testimonials</a>
-         <a class="nav-link" href="testimonials.html">Testimonials</a>
-      
-</div>
+        <a class="nav-link" href="testimonials.html">Testimonials</a>
+ <div class="d-flex align-items-center">
+          <div class="form-check form-switch mb-0">
+            <input class="form-check-input" type="checkbox" id="darkSwitch">
+            <label class="form-check-label" for="darkSwitch">
+              <i class="fas fa-moon"></i>
+            </label>
+      </div>
     </div>
   </div>
 </nav>
- <body>
-<main>
-<section class="container">
-  <div class="title">
-  <h2>Testimonials</h2>
-  <div class="underline"></div>
-</div>
-
-<article class="review">
-<div class="img-container">
-<img src="#" id="person-img"/>
-</div>
-            
- <h4 id="author">ean</h4>
- <p id="job">Student</p>
-<p id="info">
-dariana is a nice kind person.
- </p>
-
-            
-<div class="button-container">
- <button class="prev-btn">
-<i class="fas fa-chevron-left"></i>
-</button>
-
-<button class="prev-btn">
-<i class="fas fa-chevron-right"></i>
- </button>
 
 
-</div>  
-</article>
-</section>
-</main>
+<body>
+    <main>
+        <section class="container">
+            <div class="title">
+                <h2>Testimonials</h2>
+                <div class="underline"></div>
+            </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-  </body>
-  
+
+
+
+            <article class="review">
+                <div class="img-container">
+                    <img src="https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840205488029602416&th=1989b9243bba9270&view=fimg&fur=ip&permmsgid=msg-f:1840205488029602416&sz=s0-l75-ft&attbid=ANGjdJ8HAKOcxsXPfkF5p3cHCbuj5mO_W5udT79RkZJVAeKJGGuSRc7rE72sBqdWmKYz50ciKfe2epaf2L2cidsXHgjic-8peo1UA1z_CmzAV7UcDMUET-tcqLbP1ak&disp=emb&realattid=ii_1989b920185d003b3f41&zw" id="person-img"/>
+                </div>
+
+
+
+
+                <h4 id="author"> Insert Name Here</h4>
+                <p id="job">insert Job here</p>
+                <p id="info">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."    
+                </p>
+
+
+
+
+                <div class="button-container">
+                    <button class="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+
+
+
+                     <button class="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+
+
+
+                </div>
+            </article>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+    const darkSwitch = document.getElementById('darkSwitch');
+    const body = document.body;
+
+
+
+
+    // load saved preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      darkSwitch.checked = true;
+    }
+
+
+
+
+    darkSwitch.addEventListener('change', () => {
+      body.classList.toggle('dark-mode', darkSwitch.checked);
+      localStorage.setItem('darkMode', darkSwitch.checked);
+    });
+  </script>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
 </html>
 
 
@@ -77,3 +197,32 @@ dariana is a nice kind person.
 
 
 
+
+
+
+
+
+
+
+
+ {
+        id: 1,
+        name: 'ean',
+        img:'https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840209762508268950&th=1989bd077682e596&view=fimg&fur=ip&permmsgid=msg-f:1840209762508268950&sz=s0-l75-ft&attbid=ANGjdJ8Vsn6LTW4VMGuYciH5nIt4nDJ88oCyJDKcm6xashryoaZabMSkPbjCOyfDZ0hpGUv2gDlmdItG2nV69zLQ_Clx17kSe9abuM5GPDjnVzXextfdG5Uy7ZaioC4&disp=emb&realattid=ii_1989bd03d2d33c722f01&zw'
+        text: 'dariana has an unique personality and she is nice.
+    },  
+   
+    {
+        id: 2,
+        name: 'myself',
+        img:'https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840205488029602416&th=1989b9243bba9270&view=fimg&fur=ip&permmsgid=msg-f:1840205488029602416&sz=s0-l75-ft&attbid=ANGjdJ8HAKOcxsXPfkF5p3cHCbuj5mO_W5udT79RkZJVAeKJGGuSRc7rE72sBqdWmKYz50ciKfe2epaf2L2cidsXHgjic-8peo1UA1z_CmzAV7UcDMUET-tcqLbP1ak&disp=emb&realattid=ii_1989b920185d003b3f41&zw'
+        text: 'dariana is cool. He is really nice and helps me when I get stuck. He knows a lot and explains stuff so anyone can understand it. I like working with him because he is funny. He smiles at me and says hi. And If you need help he will stop and show you how to do it.'
+    },  
+   
+    {
+        id: 3,
+        name: 'myself',
+        img:'https://mail.google.com/mail/u/1?ui=2&ik=885fcada53&attid=0.1&permmsgid=msg-f:1840206396567031022&th=1989b9f7c4c78cee&view=fimg&fur=ip&permmsgid=msg-f:1840206396567031022&sz=s0-l75-ft&attbid=ANGjdJ_THDhQFhscAg1c9SLH0hEUt-janTLtI32FiSVr7VASCifmweVJJyZPgpggo7uBws9FqSOrAF4Xh9SNMwxlW-udePMlursUAkY2lxpcSjDBFix82f1gvlUkQt0&disp=emb&realattid=ii_1989b9f4637284a4ee41&zw'
+        text: 'dariana is one of my close friends and a quality about him that I really adore is his helpfulness. Ean is a person that would literally drop anything to help out friend in need. Because of this I know that I could turn to him if I have a problem and if he is able to help me he will.'
+    },
+];
